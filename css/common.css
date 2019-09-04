@@ -1,0 +1,315 @@
+/* A general stylesheet for the website */
+
+/* Adjustment for the fixed-top navbar */
+body {
+	padding-top: 20px;
+	color: #3f3f3f;
+}
+
+/* Navbar styles */
+.navbar-brand {
+	padding-top: 0px;
+}
+
+.navbar-brand img {
+	height: 50px;
+}
+
+.navbar-collapse {
+	font-size: 20px;
+}
+
+#navbar-tabs>li>a {
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #3f3f3f;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#navbar-tabs>li.active>a {
+	color: #000;
+	text-decoration: underline;
+}
+
+/* Additional padding to the bottom of the main content */
+#content {
+	padding-bottom: 2em;
+}
+
+/* Styles for rounded buttons */
+.btn-round {
+	border-radius: 0.5em;
+}
+
+/* Home page officers list */
+.officers-list {
+	padding-left: 0px;
+	list-style-type: none;
+	text-align: center;
+}
+
+/* Member profiles bullet list */
+.profiles-overview {
+	margin-top: 0px;
+}
+
+.profile-name {
+	margin-top: 0px;
+}
+
+.post-list {
+	list-style-type: disc;
+}
+
+/* only show member list for small or larger
+   767 is one less than the 768 break point between xs and small from core bootstrap */
+@media (max-width: 767px) {
+    .members-list {
+        visibility: hidden;
+    }
+}
+
+.members-list {
+	list-style-type: none;
+}
+
+.members-list>li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+
+.members-list>li>a {
+	margin-top: 20px;
+	color: #000000;
+}
+
+.members-list>li>a:hover {
+	color: #bd2031;
+}
+
+.selected-member {
+	border-left-color: #bd2031;
+	border-left-style: solid;
+	border-left-width: 2px;
+}
+
+.selected-member>a {
+	font-weight: bold;
+}
+
+/* Styles for data challenges */
+.challenge-title {
+	margin-top: 0px;
+}
+
+.download-title {
+	text-decoration: underline;
+	margin-top: 0px;
+}
+
+.file-link {
+	margin: 2px;
+	border-color: #bd2031;
+	border-style: solid;
+	color: #000000;
+}
+
+.file-link:hover {
+	color: #bd2031;
+	background-color: #eeeeee
+}
+
+.file-link img {
+	max-height: 16px;
+	max-width: 16px;
+}
+
+/* Contact page styles */
+.contact-listing {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* Blog styles */
+.blog-post-title {
+	text-transform: uppercase;
+	color: #990000;
+}
+
+.blog-post-byline {
+	font-style: italic;
+}
+
+.blog-image-wrapper>img {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.blog-image-wrapper>p {
+	text-align: center;
+	font-style: italic;
+}
+
+.blog-image-wrapper>p>span {
+	font-weight: bold;
+}
+
+.blog-subtitle {
+	font-weight: bold;
+}
+
+.blog-author-note {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.blog-table>thead {
+	border-bottom-width: 2px;
+	border-bottom-color: #aaaaaa;
+	border-bottom-style: solid;
+}
+
+.noSelect {
+	-moz-user-select: none;
+  	-khtml-user-select: none;
+  	-webkit-user-select: none;
+  	user-select: none;
+}
+
+#blog-sidebar>div {
+	background-color: #eeeeee;
+	border-width: 1px;
+	border-color: #000000;
+	border-style: solid;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+
+#blog-sidebar>div>h3 {
+	text-transform: uppercase;
+	border-bottom-width: 3px;
+	border-bottom-color: #990000;
+	border-bottom-style: solid;
+}
+
+.recent-posts>ul {
+	list-style-type: none;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.recent-posts>ul>a>li {
+	text-indent: -25px;
+	padding-left: 25px;
+}
+
+.recent-posts>ul>a {
+	color: #000000;
+}
+
+.recent-posts>ul>a:hover {
+	color: #990000;
+	text-decoration: none;
+	font-style: italic;
+}
+
+.recent-post-disabled {
+	text-decoration: line-through;
+	cursor: not-allowed;
+}
+
+.recent-post-disabled:hover {
+	/* important to set precedent over the text-decoration: none;
+	 in .recent-posts>ul>a:hover, which was for general link usage.
+	 This is specifically for disabled, in which the line-through
+	 is desired to be maintained upon hover
+	 TODO: do this without using !important*/
+	text-decoration: line-through !important;
+}
+
+/* Bright red to denote that a post is not clickable */
+.recent-post-disabled>li {
+	color: #ff0000;
+}
+
+.toggle-button {
+	position: absolute;
+	right: 30px;
+}
+
+.toggle-button:hover {
+	cursor: pointer;
+}
+
+.filter-option {
+	display: inline;
+	color: #990000;
+}
+
+.filter-checkbox>input {
+	background-color: #ab84e1;
+}
+
+.unselected-label {
+	text-decoration: line-through;
+}
+
+.filter-button {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#empty-note {
+	background-color: #ffcccb;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+/* Styles for the project page */
+
+.project {
+	border-width: 2px;
+	border-color: #0c2856;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 15px;
+}
+
+.job-link-form>div {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.job-link-form>div>a {
+	float: right;
+}
+
+#jobLinkInput {
+	margin-right: 20px;
+	width: 100%;
+}
+
+.center {
+	text-align: center;
+}
+
+.project>div>a>h3 {
+	color: #990000;
+}
+
+.project>div>a>img {
+	width: 100%;
+}
+
+.project>div>h3 {
+	margin-top: 0px; 
+}
