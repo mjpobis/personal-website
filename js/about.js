@@ -7,7 +7,8 @@
 		navbarTitle: "ABOUT",
 		paragraphs: [
 			'I am a writer, film producer, and student. More bio information can be put here.',
-			'Multiple paragraphs are supported'
+		    'Multiple paragraphs are supported.',
+		    'This is fresh paragraph.'
 		]
 	};
 	
