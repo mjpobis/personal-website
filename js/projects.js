@@ -5,6 +5,7 @@
 		header: "My Projects",
 		description: "Environmental Communication, through film, writing, and podcasting",
 		navbarTitle: "MY WORK",
+		overview: "Below are several examples of work I have done, hosted at other websites",
 		projects: [
 			{
 				title: "Enemy of My Enemy",
@@ -75,62 +76,28 @@
 		]
 	};
 
-	Handlebars.registerHelper("proj", function(proj) {
-		var result = "";
-		result += '<div class="row project">'; // Project
-
-		// add title, and if it exists, the embed
-		result += '<h3>' + proj.title + '</h3>';
-		
-		if (proj.embed) {
-			result += proj.embed
-		}
-
-		// add the description and link
-
-		result += '<p>' + proj.description + '</p>';
-		result += '<a href="' + proj.link + '" target="_blank"> View project in new tab </a>';
-		
-	
-
-		result += '</div>'; // / JOB POSTING
-		return new Handlebars.SafeString(result);
-	});
-
-	Handlebars.registerHelper("projects-list", function(projects) {
-		var result = "";
-
-		projectsString = '<h2 class="center">Projects</h2>';
-
-		$.each(projects, function(index, proj) {
-			if (proj.show) {
-				projectsString += Handlebars.helpers.proj(proj);
-			}
-		});
-
-		result += '<div class="row">';
-		result += projectsString;
-		result += '</div>';
-
-		return new Handlebars.SafeString(result);
-	});
-
-	Handlebars.registerHelper('proj-overview', function() {
-		var overview = 'Below are several examples of work I have done, hosted at other websites';
-		
-		var result = '';
-
-		result += '<p>';
-		result += overview;
-		result += '</p>';
-
-    	return new Handlebars.SafeString(result);
-	});
-	
 	// Handlebars template for the projects page
 	projTemplate = [
-		'{{proj-overview}}',
-		'{{projects-list pageData.projects}}'
+		'{{#with pageData}}',
+			'{{#if overview}}',
+				'<p>{{overview}}</p>',
+			'{{/if}}',
+			'{{#if projects}}',
+				'<h2 class="center">Projects</h2>',
+				'<div class="row">',
+					'{{#each projects}}',
+						'<div class="row project">',
+							'<h3>{{title}}</h3>',
+							'{{#if embed}}',
+								'{{{embed}}}',
+							'{{/if}}',
+							'<p>{{description}}</p>',
+							'<a href="{{link}}" target="_blank"> View project in new tab </a>',
+						'</div>',
+					'{{/each}}',
+				'</div>',
+			'{{/if}}',
+		'{{/with}}',
 	].join('\n');
 
 	// populate page with the above data
